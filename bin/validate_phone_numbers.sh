@@ -5,11 +5,32 @@ set -e
 
 function test_connection() {
   test_msg='{"message":"test"}'
-  status=$(echo $test_msg | curl -u $AUTH -s -o response.json -w "%{http_code}\\n" -k -X POST "${HOST}/echoes" -d @- -H "Content-Type: application/json")
-  cat response.json
+  status=$(hit_api 'POST' '/echoes' $test_msg)
   if [[ "$status" -ne 200 ]]; then
     echo "ERROR! Got response code: $status"
     return 1
+  else
+    echo "Successfully connected"
+  fi
+}
+
+
+function hit_api(){
+  verb=$1
+  endpoint=$2
+  body=$3
+  if [ -z $3 ]; then
+    status=$(curl -u $AUTH -s -o response.json -w "%{http_code}\\n" -k -X ${verb} "${HOST}${endpoint}")
+  else
+    status=$(echo $body | curl -u $AUTH -s -o response.json -w "%{http_code}\\n" -k -X ${verb} "${HOST}${endpoint}" -d @- -H "Content-Type: application/json")
+  fi
+  debug "$(cat response.json)"
+  echo $status
+}
+
+function debug(){
+  if [ $DEBUG ]; then
+    echo "$@" >&2
   fi
 }
 
@@ -45,3 +66,7 @@ HOST='https://api.securevan.com/v4'
 AUTH="${NGPVAN_APPLICATION_NAME}:${NGPVAN_API_KEY}|${NGPVAN_MODE}"
 
 test_connection
+
+
+# cleanup
+rm response.json
