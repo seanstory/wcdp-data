@@ -1,0 +1,7 @@
+
+# The below are all examples. Replace them with real values
+
+export NGPVAN_API_KEY='93dd837b-8gg7-095e-2640-a846ae11ed65'
+export NGPVAN_APPLICATION_NAME='demo.derp.api'
+export NGPVAN_KEY_REFERENCE='ap98'
+export NGPVAN_MODE='MyCampaign' # valid options are MyCampaign or VoterFile
