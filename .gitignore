@@ -2,3 +2,4 @@
 .idea
 keys.sh
 response.json
+*.csv
