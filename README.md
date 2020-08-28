@@ -14,7 +14,7 @@
 You can run 
 
 ```
-bin/validate_phone_numbers.sh
+bin/wcdp validate
 ```
 
 to try out validating phone numbers (TODO, actually validate phone numbers :P )

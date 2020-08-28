@@ -2,6 +2,7 @@
 source 'https://rubygems.org'
 
 
+gem 'csv'
 gem 'hashie', '= 3.6.0'
 gem 'faraday', '= 0.15.2'
 gem 'httpclient'

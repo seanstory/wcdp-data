@@ -1,0 +1,96 @@
+{
+  "vanId": 215501,
+  "firstName": "James",
+  "lastName": "Gordon",
+  "middleName": null,
+  "dateOfBirth": "1920-07-04",
+  "emails": [
+    {
+      "type": null,
+      "email": "jim@gotham.city.us",
+      "dateCreated": "2004-10-31T14:35:00Z",
+      "isPreferred": true
+    }
+  ],
+  "phones": [
+    {
+      "phoneId": 12345,
+      "phoneNumber": "6175555920",
+      "ext": "5125",
+      "dateCreated": "2013-10-25T12:23:00Z",
+      "phoneType": "Work",
+      "isPreferred": false,
+      "phoneOptInStatus": "I",
+      "isCellStatus": {
+        "statusId": 3,
+        "statusName": "Likely Not a Cell"
+      }
+    },
+    {
+      "phoneId": 23456,
+      "phoneNumber": "7815550256",
+      "ext": null,
+      "dateCreated": "2013-10-25T12:23:00Z",
+      "phoneType": "Cell",
+      "isPreferred": true,
+      "phoneOptInStatus": "U",
+      "isCellStatus": {
+        "statusId": 2,
+        "statusName": "Likely Cell"
+      }
+    }
+  ],
+  "addresses": [
+    {
+      "addressId": null,
+      "addressLine1": "3001 Tradewinds Trl",
+      "addressLine2": null,
+      "addressLine3": null,
+      "city": "Orlando",
+      "stateOrProvince": "FL",
+      "zipOrPostalCode": "32805",
+      "geoLocation": null,
+      "countryCode": null,
+      "preview": "3001 Tradewinds Trl",
+      "type": "Voting",
+      "isPreferred": null
+    },
+    {
+      "addressId": null,
+      "addressLine1": "320 College Ave",
+      "addressLine2": null,
+      "addressLine3": null,
+      "city": "Somerville",
+      "stateOrProvince": "MA",
+      "zipOrPostalCode": "02145",
+      "geoLocation": null,
+      "countryCode": null,
+      "preview": "320 College Ave ",
+      "type": "Mailing",
+      "isPreferred": null
+    }
+  ],
+  "identifiers": [
+    {
+      "type": "MembershipID",
+      "externalId": "999313123"
+    }
+  ],
+  "customFieldValues": [
+    {
+      "customField": { },
+      "assignedValue": "true"
+    },
+    {
+      "customField": { },
+      "assignedValue": "100.00"
+    }
+  ],
+  "disclosureFieldValues": [
+    {
+      "disclosureFieldId": 1001,
+      "disclosureFieldValue": "John",
+      "designationId": 1121
+    }
+  ]
+}

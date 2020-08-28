@@ -23,7 +23,27 @@ module NGPVAN
     delegate :get, :post, :put, :delete, :head, :patch, :options, :to => :@http_client
 
     def get_api_key_profiles
-      response = get("#{BASE_URL}#{'/apiKeyProfiles'}", nil, headers)
+      get_request "#{BASE_URL}/apiKeyProfiles"
+    end
+
+    def get_person_by_id(id)
+      get_request"#{BASE_URL}/people/#{id}"
+    end
+
+    def get_cell_status_options
+      get_request "#{BASE_URL}/phones/isCellStatuses"
+    end
+
+    def update_person(person)
+      response = post("#{BASE_URL}/people/#{person.vanId}", JSON.dump(person), headers)
+      match_response = Hashie::Mash.new(JSON.parse(response.body))
+      unless match_response.status == 'Matched'
+        raise StandardError("Failed to update #{person.vanId}. Response was: #{match_response.to_h}")
+      end
+    end
+
+    def get_request(url)
+      response = get(url, nil, headers)
       Hashie::Mash.new(JSON.parse(response.body))
     end
 
