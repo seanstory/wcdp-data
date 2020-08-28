@@ -29,7 +29,7 @@ test_connection
 hit_api GET /apiKeyProfiles
 ```
 
-to try out various API endpoints.
+to try out various API endpoints. This lines up with the API syntax at https://developers.ngpvan.com/
 
 
 ## Munging ActBlue CSVs to import to NationBuilder
