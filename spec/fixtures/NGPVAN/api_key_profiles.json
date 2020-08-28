@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "databaseName": "Demo State",
+      "hasMyVoters": true,
+      "hasMyCampaign": true,
+      "committeeName": "Sean Story Demo APIKR-1282",
+      "apiKeyTypeName": "Dev Portal",
+      "keyReference": "ed65",
+      "userFirstName": "s.story",
+      "userLastName": "API Demo",
+      "username": "demo.sstory.api"
+    }
+  ],
+  "nextPageLink": null,
+  "count": 1
+}

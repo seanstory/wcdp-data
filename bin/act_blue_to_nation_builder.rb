@@ -16,11 +16,11 @@ clean_rows = rows[1..-1].each_with_object([]) do |row, new_rows|
     first_name = name_chunks[0]
     middle_name = name_chunks[1]
     last_name = name_chunks[2]
-    if middle_name == 'De'
+    if middle_name == 'De' # e.g. Frank De Joy
       last_name = "#{middle_name} #{last_name}"
       middle_name = ''
     end
-    puts "non-standard name: #{name}"
+    puts "non-standard name: #{name}" # for debugging
   else
     raise "This name doesn't parse: '#{name}'"
   end

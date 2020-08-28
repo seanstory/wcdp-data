@@ -12,17 +12,18 @@ if [ -z $NGPVAN_APPLICATION_NAME ]; then
   read NGPVAN_APPLICATION_NAME
 fi
 if [ -z $NGPVAN_MODE ]; then
-  echo "What is your Host? (Example: workplace-search-1.ea-eden-3-staging.elastic.dev)"
+  echo "What is your \"mode\"? (valid options are 'MyCampaign' or 'VoterFile')"
   read NGPVAN_MODE
 fi
-NGPVAN_API_KEY=`echo $NGPVAN_API_KEY | tr -d '[:blank:]'`
-NGPVAN_APPLICATION_NAME=`echo $NGPVAN_APPLICATION_NAME | tr -d '[:blank:]'`
-NGPVAN_MODE=`echo $NGPVAN_MODE | tr -d '[:blank:]'`
+export NGPVAN_API_KEY=`echo $NGPVAN_API_KEY | tr -d '[:blank:]'`
+export NGPVAN_APPLICATION_NAME=`echo $NGPVAN_APPLICATION_NAME | tr -d '[:blank:]'`
+export NGPVAN_MODE=`echo $NGPVAN_MODE | tr -d '[:blank:]'`
 
 source "$(dirname $0)/functions.sh"
 
 test_connection
-
-
 # cleanup
 rm response.json
+
+
+ruby "$(dirname $0)/../lib/phone_numbers.rb"

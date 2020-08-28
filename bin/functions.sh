@@ -18,6 +18,7 @@ function hit_api(){
   verb=$1
   endpoint=$2
   body=$3
+  rm -f response.json
   if [ -z "$3" ]; then
     status=$(curl -u $AUTH -s -o response.json -w "%{http_code}\\n" -k -X ${verb} "${HOST}${endpoint}")
   else
