@@ -1,7 +1,5 @@
 require 'csv'
-require 'file'
 
-# TODO: deduplicate
 # TODO: handle 2-line addresses
 # TODO: email validations
 csv = CSV.new(File.new('/path/to/actblue.csv'))
@@ -34,6 +32,7 @@ clean_rows = rows[1..-1].each_with_object([]) do |row, new_rows|
   end
   new_rows << new_row
 end
+clean_rows = clean_rows.uniq
 CSV.open('clean.csv', 'wb') do |cleaned_csv|
   clean_rows.each do |row|
     cleaned_csv << row

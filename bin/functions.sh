@@ -1,7 +1,8 @@
-source "$(dirname $0)/keys.sh"
+#!/bin/bash
+
 if [[ $NGPVAN_MODE != 'MyCampaign' && $NGPVAN_MODE != 'VoterFile' ]]; then
   echo "ERROR - NGPVAN_MODE value: ${NGPVAN_MODE} must be either 'MyCampaign' or 'VoterFile'"
-  exit 1
+  return 1
 else
   if [[ $NGPVAN_MODE == 'MyCampaign' ]]; then
     NGPVAN_MODE='0'
@@ -17,10 +18,10 @@ function hit_api(){
   verb=$1
   endpoint=$2
   body=$3
-  if [ -z $3 ]; then
+  if [ -z "$3" ]; then
     status=$(curl -u $AUTH -s -o response.json -w "%{http_code}\\n" -k -X ${verb} "${HOST}${endpoint}")
   else
-    status=$(echo $body | curl -u $AUTH -s -o response.json -w "%{http_code}\\n" -k -X ${verb} "${HOST}${endpoint}" -d @- -H "Content-Type: application/json")
+    status=$(echo "${body}" | curl -u $AUTH -s -o response.json -w "%{http_code}\\n" -k -X ${verb} "${HOST}${endpoint}" -d @- -H "Content-Type: application/json")
   fi
   debug "$(cat response.json)"
   echo $status

@@ -19,6 +19,7 @@ to try out validating phone numbers (TODO, actually validate phone numbers :P )
 You can also run:
 
 ```
+source bin/keys.sh
 source bin/functions.sh
 test_connection
 # OR
