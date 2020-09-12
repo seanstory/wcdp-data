@@ -35,8 +35,8 @@ module GeoIP
       response = get_request('address', params)
       matches = response.dig('result', 'addressMatches')
       if matches.nil? || matches.empty?
-        puts 'Response was: '
-        ap response
+        # puts 'Response was: '
+        # ap response
         raise "No matching address for #{params}"
       end
 
