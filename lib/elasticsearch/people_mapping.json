@@ -1,0 +1,348 @@
+{
+  "mappings" : {
+    "properties" : {
+      "2016:DLCC:HCandSup" : {
+        "type" : "float"
+      },
+      "2016:DLCC:HGOTV" : {
+        "type" : "float"
+      },
+      "2016:DLCC:HPers" : {
+        "type" : "float"
+      },
+      "2016:DLCC:SCandSup" : {
+        "type" : "float"
+      },
+      "2016:DLCC:SGOTV" : {
+        "type" : "float"
+      },
+      "2016:DLCC:SPers" : {
+        "type" : "float"
+      },
+      "2016:DLCC:Tnt" : {
+        "type" : "float"
+      },
+      "2016:DNC:AVEV" : {
+        "type" : "float"
+      },
+      "2016:DNC:AVEVTime" : {
+        "type" : "float"
+      },
+      "2016:DNC:DBRolRsk" : {
+        "type" : "float"
+      },
+      "2016:DNCCatholic" : {
+        "type" : "float"
+      },
+      "2016:DNCCollegeGrad" : {
+        "type" : "float"
+      },
+      "2016:DNCDefectRisk" : {
+        "type" : "float"
+      },
+      "2016:DNCEvangelical" : {
+        "type" : "float"
+      },
+      "2016:DNCGenTurnoutV2" : {
+        "type" : "float"
+      },
+      "2016:DNCGenericDem" : {
+        "type" : "float"
+      },
+      "2016:DNCHighSchool" : {
+        "type" : "float"
+      },
+      "2016:DNCIncome" : {
+        "type" : "float"
+      },
+      "2016:DNCIssueCampFin" : {
+        "type" : "float"
+      },
+      "2016:DNCIssueChoice" : {
+        "type" : "float"
+      },
+      "2016:DNCIssueCitizen" : {
+        "type" : "float"
+      },
+      "2016:DNCIssueClimate" : {
+        "type" : "float"
+      },
+      "2016:DNCIssueCollege" : {
+        "type" : "float"
+      },
+      "2016:DNCIssueGunCtrl" : {
+        "type" : "float"
+      },
+      "2016:DNCIssueMinWage" : {
+        "type" : "float"
+      },
+      "2016:DNCIssuePdLeave" : {
+        "type" : "float"
+      },
+      "2016:DNCIssuePrivacy" : {
+        "type" : "float"
+      },
+      "2016:DNCIssueProgTax" : {
+        "type" : "float"
+      },
+      "2016:DNCNonChristian" : {
+        "type" : "float"
+      },
+      "2016:DNCOthChristian" : {
+        "type" : "float"
+      },
+      "2016:DNCVolPrPhV4" : {
+        "type" : "float"
+      },
+      "2016:DNCVolPrWV4" : {
+        "type" : "float"
+      },
+      "2016:DNCVolPropV4" : {
+        "type" : "float"
+      },
+      "2016:TSM:ASDCDon" : {
+        "type" : "float"
+      },
+      "2018:Cla:DCCCTNT" : {
+        "type" : "float"
+      },
+      "2018:DCCCBLHGS" : {
+        "type" : "float"
+      },
+      "2018:DNCDemSupport" : {
+        "type" : "float"
+      },
+      "2018:TSM:Eth" : {
+        "type" : "keyword"
+      },
+      "2018:TSM:MdGnTNT" : {
+        "type" : "float"
+      },
+      "2018:TSM:NPYPT" : {
+        "type" : "float"
+      },
+      "2018:TSM:NatPart" : {
+        "type" : "float"
+      },
+      "2020:CivKidsinHH" : {
+        "type" : "float"
+      },
+      "2020:CivLibIdeo" : {
+        "type" : "float"
+      },
+      "2020:CivMarriage" : {
+        "type" : "float"
+      },
+      "2020:VolProp" : {
+        "type" : "float"
+      },
+      "AVEV" : {
+        "type" : "float"
+      },
+      "Address" : {
+        "type" : "text",
+        "fields" : {
+          "keyword" : {
+            "type" : "keyword",
+            "ignore_above" : 256
+          }
+        }
+      },
+      "Age" : {
+        "type" : "long"
+      },
+      "AntiGOP" : {
+        "type" : "float"
+      },
+      "AntiGopInc" : {
+        "type" : "float"
+      },
+      "BalDrop" : {
+        "type" : "float"
+      },
+      "CD" : {
+        "type" : "keyword"
+      },
+      "Cell Phone" : {
+        "type" : "keyword"
+      },
+      "CellPhoneIsCell" : {
+        "type" : "keyword"
+      },
+      "City" : {
+        "type" : "keyword"
+      },
+      "CivGOTV" : {
+        "type" : "float"
+      },
+      "CivPart" : {
+        "type" : "float"
+      },
+      "CivRace" : {
+        "type" : "keyword"
+      },
+      "CivSpan" : {
+        "type" : "float"
+      },
+      "CivTnt" : {
+        "type" : "float"
+      },
+      "CountyName" : {
+        "type" : "keyword"
+      },
+      "CultPers" : {
+        "type" : "float"
+      },
+      "DLCCHDSup" : {
+        "type" : "float"
+      },
+      "DLCCSDSup" : {
+        "type" : "float"
+      },
+      "DLCCTurnout" : {
+        "type" : "float"
+      },
+      "DOB" : {
+        "type" : "date"
+      },
+      "DSCCTnt" : {
+        "type" : "float"
+      },
+      "DateReg" : {
+        "type" : "date"
+      },
+      "DemPartySup" : {
+        "type" : "float"
+      },
+      "EconPers" : {
+        "type" : "float"
+      },
+      "FirstName" : {
+        "type" : "text",
+        "fields" : {
+          "keyword" : {
+            "type" : "keyword",
+            "ignore_above" : 256
+          }
+        }
+      },
+      "GovSup" : {
+        "type" : "float"
+      },
+      "HD" : {
+        "type" : "keyword"
+      },
+      "HealthcarePer" : {
+        "type" : "float"
+      },
+      "Home Phone" : {
+        "type" : "keyword"
+      },
+      "HomePhoneIsCell" : {
+        "type" : "keyword"
+      },
+      "LastName" : {
+        "type" : "text",
+        "fields" : {
+          "keyword" : {
+            "type" : "keyword",
+            "ignore_above" : 256
+          }
+        }
+      },
+      "MiddleName" : {
+        "type" : "text",
+        "fields" : {
+          "keyword" : {
+            "type" : "keyword",
+            "ignore_above" : 256
+          }
+        }
+      },
+      "NatTO" : {
+        "type" : "float"
+      },
+      "PoliPers" : {
+        "type" : "float"
+      },
+      "Preferred Phone" : {
+        "type" : "keyword"
+      },
+      "SD" : {
+        "type" : "keyword"
+      },
+      "SHGOTV" : {
+        "type" : "float"
+      },
+      "SHSup" : {
+        "type" : "float"
+      },
+      "SSGOTV" : {
+        "type" : "float"
+      },
+      "SSSup" : {
+        "type" : "float"
+      },
+      "Sex" : {
+        "type" : "keyword"
+      },
+      "State" : {
+        "type" : "keyword"
+      },
+      "TaxEconPer" : {
+        "type" : "float"
+      },
+      "Tnt" : {
+        "type" : "float"
+      },
+      "TrmpChck" : {
+        "type" : "float"
+      },
+      "TrumpChkPer" : {
+        "type" : "float"
+      },
+      "TrumpPers" : {
+        "type" : "float"
+      },
+      "Voter File VANID" : {
+        "type" : "keyword"
+      },
+      "WardName" : {
+        "type" : "keyword"
+      },
+      "YEARXXScoreSName" : {
+        "type" : "float"
+      },
+      "Zip4" : {
+        "type" : "keyword"
+      },
+      "Zip5" : {
+        "type" : "keyword"
+      },
+      "location" : {
+        "type": "geo_point"
+      },
+      "mAddress" : {
+        "type" : "text",
+        "fields" : {
+          "keyword" : {
+            "type" : "keyword",
+            "ignore_above" : 256
+          }
+        }
+      },
+      "mCity" : {
+        "type" : "keyword"
+      },
+      "mState" : {
+        "type" : "keyword"
+      },
+      "mZip4" : {
+        "type" : "keyword"
+      },
+      "mZip5" : {
+        "type" : "keyword"
+      }
+    }
+  }
+}
