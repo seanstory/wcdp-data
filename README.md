@@ -1,5 +1,37 @@
 # Data Tools for WCDP
 
+## Data Analysis of WCDP
+
+To do geospacial analysis of voter data, the first step is to retrieve geo-IPs for voters. The
+data in VoteBuilder doesn't come with latitude/longitude pairs, but we can fetch most geo-IPs from
+open Census data apis.
+
+First, given a List export from VoteBuilder called `input.csv` run:
+
+```
+ruby lib/geoip/geoip_csv.rb input.csv geoips.csv
+```
+
+This will produce a CSV with a VANID, latitude, and longitude for _most_ voters (some mailing addresses are newer than the
+available census data). The resulting file will look like:
+
+```
+VANID,latitude,longitude
+6271,35.957436,-86.72896
+12155,35.9647,-86.82905
+12179,35.779125,-86.888855
+```
+
+Next, you can join these IPs with the source data, and index into Elasticsearch with:
+
+```
+ruby lib/elasticsearch/indexer.rb input.csv geoips.csv
+```
+
+This creates a new `people` index with the mapping found at `lib/elasticsearch/people_mapping.json`
+
+From there, it's a simple matter of building visualizations.
+
 ## Validating VoteBuilder Phone Numbers
 
 ### Usage
