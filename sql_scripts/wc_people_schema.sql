@@ -106,7 +106,7 @@ CREATE TABLE people(
   "2020:CivLibIdeo" REAL,
   "2020:CivMarriage" REAL,
   "CivSpan" REAL,
-  "2020:VolProp" TEXT,
+  "2020:VolProp" REAL,
   "OtherEmail" TEXT,
   "WorkEmail" TEXT,
   "WardName" INTEGER,
