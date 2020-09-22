@@ -169,6 +169,9 @@
       "CellPhoneIsCell" : {
         "type" : "keyword"
       },
+      "CellPhoneSource" : {
+        "type" : "keyword"
+      },
       "City" : {
         "type" : "keyword"
       },
@@ -186,6 +189,18 @@
       },
       "CivTnt" : {
         "type" : "float"
+      },
+      "CodedRaceName" : {
+        "type" : "keyword"
+      },
+      "CountyCommissionerCode" : {
+        "type" : "keyword"
+      },
+      "CountyFileID" : {
+        "type" : "keyword"
+      },
+      "CountyID" : {
+        "type" : "keyword"
       },
       "CountyName" : {
         "type" : "keyword"
@@ -214,6 +229,15 @@
       "DemPartySup" : {
         "type" : "float"
       },
+      "EarlyVoted" : {
+        "type" : "text",
+        "fields" : {
+          "keyword" : {
+            "type" : "keyword",
+            "ignore_above" : 256
+          }
+        }
+      },
       "EconPers" : {
         "type" : "float"
       },
@@ -225,6 +249,36 @@
             "ignore_above" : 256
           }
         }
+      },
+      "General00" : {
+        "type" : "keyword"
+      },
+      "General02" : {
+        "type" : "keyword"
+      },
+      "General04" : {
+        "type" : "keyword"
+      },
+      "General06" : {
+        "type" : "keyword"
+      },
+      "General08" : {
+        "type" : "keyword"
+      },
+      "General12" : {
+        "type" : "keyword"
+      },
+      "General14" : {
+        "type" : "keyword"
+      },
+      "General16" : {
+        "type" : "keyword"
+      },
+      "General18" : {
+        "type" : "keyword"
+      },
+      "General96" : {
+        "type" : "keyword"
       },
       "GovSup" : {
         "type" : "float"
@@ -241,6 +295,9 @@
       "HomePhoneIsCell" : {
         "type" : "keyword"
       },
+      "HomePhoneSource" : {
+        "type" : "keyword"
+      },
       "LastName" : {
         "type" : "text",
         "fields" : {
@@ -249,6 +306,9 @@
             "ignore_above" : 256
           }
         }
+      },
+      "Likely_Party" : {
+        "type" : "keyword"
       },
       "MiddleName" : {
         "type" : "text",
@@ -262,10 +322,82 @@
       "NatTO" : {
         "type" : "float"
       },
+      "PhoneSource" : {
+        "type" : "keyword"
+      },
       "PoliPers" : {
         "type" : "float"
       },
+      "PollingAddress" : {
+        "type" : "text",
+        "fields" : {
+          "keyword" : {
+            "type" : "keyword",
+            "ignore_above" : 256
+          }
+        }
+      },
+      "PollingCity" : {
+        "type" : "keyword"
+      },
+      "PollingContactInfo" : {
+        "type" : "text",
+        "fields" : {
+          "keyword" : {
+            "type" : "keyword",
+            "ignore_above" : 256
+          }
+        }
+      },
+      "PollingLocation" : {
+        "type" : "text",
+        "fields" : {
+          "keyword" : {
+            "type" : "keyword",
+            "ignore_above" : 256
+          }
+        }
+      },
+      "PollingLocationDescription" : {
+        "type" : "text"
+      },
+      "PollingZip" : {
+        "type" : "keyword"
+      },
+      "PrecinctID" : {
+        "type" : "keyword"
+      },
+      "PrecinctName" : {
+        "type" : "keyword"
+      },
       "Preferred Phone" : {
+        "type" : "keyword"
+      },
+      "PreferredPhoneIsCell" : {
+        "type" : "keyword"
+      },
+      "PresPrimary08" : {
+        "type" : "keyword"
+      },
+      "PresPrimary08Party" : {
+        "type" : "keyword"
+      },
+      "PresPrimary16" : {
+        "type" : "keyword"
+      },
+      "PresPrimary16Party" : {
+        "type" : "keyword"
+      },
+      "PresPrimary20" : {
+        "type" : "keyword"
+      },
+      "PresPrimary20Party" : {
+        "type" : "keyword"
+      },
+      "Primary02" : {
+        "type" : "keyword"
+      },
+      "Primary02Party" : {
         "type" : "keyword"
       },
       "SD" : {
@@ -289,6 +421,9 @@
       "State" : {
         "type" : "keyword"
       },
+      "StateFileID" : {
+        "type" : "keyword"
+      },
       "TaxEconPer" : {
         "type" : "float"
       },
@@ -303,6 +438,9 @@
       },
       "TrumpPers" : {
         "type" : "float"
+      },
+      "VotedStatus" : {
+        "type" : "keyword"
       },
       "Voter File VANID" : {
         "type" : "keyword"
@@ -320,7 +458,7 @@
         "type" : "keyword"
       },
       "location" : {
-        "type": "geo_point"
+        "type" : "geo_point"
       },
       "mAddress" : {
         "type" : "text",

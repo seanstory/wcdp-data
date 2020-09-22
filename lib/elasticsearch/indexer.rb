@@ -27,7 +27,7 @@ module Elasticsearch
         data = row_to_es_json(row, col_names, latlon)
         # puts data
         puts "Adding #{row[0]} to '#{INDEX_NAME}'"
-        client.add('people', row[0], data)
+        client.add(INDEX_NAME, row[0], data)
       end
     end
 
