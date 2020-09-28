@@ -10,6 +10,12 @@ module Elasticsearch
           a = value.split('/')
           value = "#{a[2]}-#{a[0]}-#{a[1]}"
         end
+        i = 2
+        orig_key = key
+        while hsh.keys.include?(key) do
+          key = "#{orig_key}_#{i}"
+          i += 1
+        end
         hsh[key] = value
       end
       hsh

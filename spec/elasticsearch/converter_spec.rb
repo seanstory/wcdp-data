@@ -18,4 +18,16 @@ describe 'Elasticsearch::Converter' do
       })
   end
 
+  it 'handles duplicate column names' do
+    row = ['foo', 'bar', 'baz']
+    col_names = ['a', 'a','a']
+    json = Elasticsearch::Converter.csv_row_to_hash(row, col_names)
+    expect(json).to eq(
+      {
+        'a' => 'foo',
+        'a_2' => 'bar',
+        'a_3' => 'baz'
+      })
+  end
+
 end
