@@ -6,7 +6,7 @@ require_relative 'converter'
 
 module Elasticsearch
   class Indexer
-    INDEX_NAME = 'people'
+    BATCH_SIZE = 1000
 
     attr_reader :client
 
@@ -14,20 +14,30 @@ module Elasticsearch
       @client = Elasticsearch::Client.build_client!
     end
 
-    def index(data_csv_path, geoip_csv_path)
-      client.delete_index(INDEX_NAME)
-      client.set_mapping(INDEX_NAME, JSON.parse(File.new('lib/elasticsearch/people_mapping.json').read).to_json)
+    def index(index_name, data_csv_path, geoip_csv_path)
+      client.delete_index(index_name)
+      client.set_mapping(index_name, JSON.parse(File.new('lib/elasticsearch/people_mapping.json').read).to_json)
       geoips = self.class.geoip_map(geoip_csv_path)
       csv = CSV.new(File.new(data_csv_path))
       all_rows = csv.read
       col_names = all_rows[0]
       rows = all_rows[1..-1] # skip the header
+      batch = []
+      batch_num = 1
       rows.each do |row|
         latlon = geoips[row[0]]
         data = row_to_es_json(row, col_names, latlon)
         # puts data
-        puts "Adding #{row[0]} to '#{INDEX_NAME}'"
-        client.add(INDEX_NAME, row[0], data)
+        puts "#{batch_num}: Adding #{row[0]} to batch"
+        batch << data
+        if batch.size == 1000
+          client.bulk_add(index_name, batch)
+          batch = []
+          batch_num += 1
+        end
+      end
+      unless batch.empty?
+        client.bulk_add(index_name, batch)
       end
     end
 
@@ -39,7 +49,8 @@ module Elasticsearch
           'lon' => latlon[1]
         }
       end
-      JSON.pretty_generate(hsh)
+      hsh.to_json
+      # JSON.pretty_generate(hsh)
     end
 
 
@@ -55,8 +66,8 @@ module Elasticsearch
 end
 
 
-if ARGV.size == 2
-  Elasticsearch::Indexer.new.index(ARGV[0], ARGV[1])
+if ARGV.size == 3
+  Elasticsearch::Indexer.new.index(ARGV[0], ARGV[1], ARGV[2])
 else
-  puts "ERROR: Usage: `$ ruby indexer.rb <data.csv> <geoip.csv>`"
+  puts "ERROR: Usage: `$ ruby indexer.rb <index_name> <data.csv> <geoip.csv>`"
 end

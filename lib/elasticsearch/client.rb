@@ -52,6 +52,15 @@ module Elasticsearch
       JSON.parse(response.body)
     end
 
+    def bulk_add(index, documents)
+      json = bulk_json_from_array(index, documents)
+      response = post("_bulk", json, headers)
+      unless response.success?
+        raise "Failed to add #{id} to #{index}: #{response.body}"
+      end
+      JSON.parse(response.body)
+    end
+
     private
 
     def initialize_http_client!
@@ -65,6 +74,16 @@ module Elasticsearch
       {
         'Content-Type' => 'application/json'
       }
+    end
+
+    def bulk_json_from_array(index, documents)
+      ndjson = ""
+      documents.each do |doc|
+        ndjson += "{ \"index\" : { \"_index\" : \"#{index}\"} }\n"
+        ndjson += doc
+        ndjson += "\n"
+      end
+      ndjson
     end
 
   end

@@ -25,7 +25,7 @@ VANID,latitude,longitude
 Next, you can join these IPs with the source data, and index into Elasticsearch with:
 
 ```
-ruby lib/elasticsearch/indexer.rb input.csv geoips.csv
+ruby lib/elasticsearch/indexer.rb people input.csv geoips.csv
 ```
 
 This creates a new `people` index with the mapping found at `lib/elasticsearch/people_mapping.json`
