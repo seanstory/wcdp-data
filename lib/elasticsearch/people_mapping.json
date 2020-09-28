@@ -178,6 +178,9 @@
       "CivPart" : {
         "type" : "float"
       },
+      "CivPart_2" : {
+        "type" : "float"
+      },
       "CivRace" : {
         "type" : "keyword"
       },
@@ -232,6 +235,9 @@
       "EconPers" : {
         "type" : "float"
       },
+      "Envelope Name  Informal" : {
+        "type": "keyword"
+      },
       "FirstName" : {
         "type" : "text",
         "fields" : {
@@ -256,6 +262,9 @@
       "General08" : {
         "type" : "keyword"
       },
+      "General10" : {
+        "type": "keyword"
+      },
       "General12" : {
         "type" : "keyword"
       },
@@ -268,8 +277,14 @@
       "General18" : {
         "type" : "keyword"
       },
+      "General92" : {
+        "type": "keyword"
+      },
       "General96" : {
         "type" : "keyword"
+      },
+      "General98" : {
+        "type": "keyword"
       },
       "GovSup" : {
         "type" : "float"
@@ -301,6 +316,30 @@
       "Likely_Party" : {
         "type" : "keyword"
       },
+      "LocalPrimary02" : {
+        "type": "keyword"
+      },
+      "LocalPrimary02Party" : {
+        "type": "keyword"
+      },
+      "LocalPrimary06" : {
+        "type": "keyword"
+      },
+      "LocalPrimary06Party" : {
+        "type": "keyword"
+      },
+      "LocalPrimary10" : {
+        "type": "keyword"
+      },
+      "LocalPrimary10Party" : {
+        "type": "keyword"
+      },
+      "LocalPrimary94" : {
+        "type": "keyword"
+      },
+      "LocalPrimary94Party" : {
+        "type": "keyword"
+      },
       "MiddleName" : {
         "type" : "text",
         "fields" : {
@@ -310,6 +349,75 @@
           }
         }
       },
+      "MunicipalGeneral03" : {
+        "type": "keyword"
+      },
+      "MunicipalGeneral05" : {
+        "type": "keyword"
+      },
+      "MunicipalGeneral07" : {
+        "type": "keyword"
+      },
+      "MunicipalGeneral09" : {
+        "type": "keyword"
+      },
+      "MunicipalGeneral11" : {
+        "type": "keyword"
+      },
+      "MunicipalGeneral13" : {
+        "type": "keyword"
+      },
+      "MunicipalGeneral15" : {
+        "type": "keyword"
+      },
+      "MunicipalGeneral18" : {
+        "type": "keyword"
+      },
+      "MunicipalPrimary02" : {
+        "type": "keyword"
+      },
+      "MunicipalPrimary03" : {
+        "type": "keyword"
+      },
+      "MunicipalPrimary06" : {
+        "type": "keyword"
+      },
+      "MunicipalPrimary07" : {
+        "type": "keyword"
+      },
+      "MunicipalPrimary09" : {
+        "type": "keyword"
+      },
+      "MunicipalPrimary11" : {
+        "type": "keyword"
+      },
+      "MunicipalPrimary11Party" : {
+        "type": "keyword"
+      },
+      "MunicipalPrimary13" : {
+        "type": "keyword"
+      },
+      "MunicipalPrimary14" : {
+        "type": "keyword"
+      },
+      "MunicipalPrimary14Party" : {
+        "type": "keyword"
+      },
+      "MunicipalPrimary18" : {
+        "type": "keyword"
+      },
+      "MunicipalPrimary18Party" : {
+        "type": "keyword"
+      },
+      "MunicipalRunoff03" : {
+        "type": "keyword"
+      },
+      "MunicipalRunoff11" : {
+        "type": "keyword"
+      },
+      "MunicipalRunoff15" : {
+        "type": "keyword"
+      },
       "NatTO" : {
         "type" : "float"
       },
@@ -317,6 +425,9 @@
         "type" : "text"
       },
       "OtherEmail" : {
+        "type" : "keyword"
+      },
+      "PersonalEmail" : {
         "type" : "keyword"
       },
       "PhoneSource" : {
@@ -376,10 +487,28 @@
       "PreferredPhoneIsCell" : {
         "type" : "keyword"
       },
+      "PresPrimary00" : {
+        "type" : "keyword"
+      },
+      "PresPrimary00Party" : {
+        "type" : "keyword"
+      },
+      "PresPrimary04" : {
+        "type" : "keyword"
+      },
+      "PresPrimary04Party" : {
+        "type" : "keyword"
+      },
       "PresPrimary08" : {
         "type" : "keyword"
       },
       "PresPrimary08Party" : {
+        "type" : "keyword"
+      },
+      "PresPrimary12" : {
+        "type" : "keyword"
+      },
+      "PresPrimary12Party" : {
         "type" : "keyword"
       },
       "PresPrimary16" : {
@@ -394,13 +523,73 @@
       "PresPrimary20Party" : {
         "type" : "keyword"
       },
+      "Primary00" : {
+        "type" : "keyword"
+      },
+      "Primary00Party" : {
+        "type" : "keyword"
+      },
       "Primary02" : {
         "type" : "keyword"
       },
       "Primary02Party" : {
         "type" : "keyword"
       },
+      "Primary04" : {
+        "type" : "keyword"
+      },
+      "Primary04Party" : {
+        "type" : "keyword"
+      },
+      "Primary06" : {
+        "type" : "keyword"
+      },
+      "Primary06Party" : {
+        "type" : "keyword"
+      },
+      "Primary08" : {
+        "type" : "keyword"
+      },
+      "Primary08Party" : {
+        "type" : "keyword"
+      },
+      "Primary10" : {
+        "type" : "keyword"
+      },
+      "Primary10Party" : {
+        "type" : "keyword"
+      },
+      "Primary12" : {
+        "type" : "keyword"
+      },
+      "Primary12Party" : {
+        "type" : "keyword"
+      },
+      "Primary14" : {
+        "type" : "keyword"
+      },
+      "Primary14Party" : {
+        "type" : "keyword"
+      },
+      "Primary16" : {
+        "type" : "keyword"
+      },
+      "Primary16Party" : {
+        "type" : "keyword"
+      },
+      "Primary18" : {
+        "type" : "keyword"
+      },
+      "Primary18Party" : {
+        "type" : "keyword"
+      },
+      "PrimaryRunoff18" : {
+        "type" : "keyword"
+      },
       "RaceName" : {
+        "type" : "keyword"
+      },
+      "Runoff07" : {
         "type" : "keyword"
       },
       "SD" : {
@@ -422,6 +611,45 @@
         "type" : "text"
       },
       "Sex" : {
+        "type" : "keyword"
+      },
+      "Special09" : {
+        "type" : "keyword"
+      },
+      "Special11" : {
+        "type" : "keyword"
+      },
+      "Special13" : {
+        "type" : "keyword"
+      },
+      "Special17" : {
+        "type" : "keyword"
+      },
+      "Special18" : {
+        "type" : "keyword"
+      },
+      "SpecialPrimary09" : {
+        "type" : "keyword"
+      },
+      "SpecialPrimary09Party" : {
+        "type" : "keyword"
+      },
+      "SpecialPrimary17" : {
+        "type" : "keyword"
+      },
+      "SpecialPrimary17Party" : {
+        "type" : "keyword"
+      },
+      "SpecialPrimary18" : {
+        "type" : "keyword"
+      },
+      "SpecialPrimary18Party" : {
+        "type" : "keyword"
+      },
+      "SpecialPrimaryDec109" : {
+        "type" : "keyword"
+      },
+      "SpecialPrimaryDec109_2" : {
         "type" : "keyword"
       },
       "State" : {
@@ -464,6 +692,9 @@
         "type" : "keyword"
       },
       "WorkPhoneIsCell " : {
+        "type" : "keyword"
+      },
+      "WorkPhoneSource" : {
         "type" : "keyword"
       },
       "YEARXXScoreSName" : {
