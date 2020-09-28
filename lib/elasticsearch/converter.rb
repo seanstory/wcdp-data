@@ -6,7 +6,7 @@ module Elasticsearch
     def self.csv_row_to_hash(row, column_names)
       hsh = {}
       column_names.zip(row).each do |key, value|
-        if (key == 'DOB' || key == 'DateReg') && value.present?
+        if (key == 'DOB' || key == 'DateReg') && !value.nil?
           a = value.split('/')
           value = "#{a[2]}-#{a[0]}-#{a[1]}"
         end

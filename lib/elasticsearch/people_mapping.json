@@ -1,6 +1,9 @@
 {
   "mappings" : {
     "properties" : {
+      " WorkPhoneExt" : {
+        "type" : "keyword"
+      },
       "2016:DLCC:HCandSup" : {
         "type" : "float"
       },
@@ -8,7 +11,7 @@
         "type" : "float"
       },
       "2016:DLCC:HPers" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:DLCC:SCandSup" : {
         "type" : "float"
@@ -17,7 +20,7 @@
         "type" : "float"
       },
       "2016:DLCC:SPers" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:DLCC:Tnt" : {
         "type" : "float"
@@ -26,22 +29,22 @@
         "type" : "float"
       },
       "2016:DNC:AVEVTime" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:DNC:DBRolRsk" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:DNCCatholic" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:DNCCollegeGrad" : {
         "type" : "float"
       },
       "2016:DNCDefectRisk" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:DNCEvangelical" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:DNCGenTurnoutV2" : {
         "type" : "float"
@@ -53,7 +56,7 @@
         "type" : "float"
       },
       "2016:DNCIncome" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:DNCIssueCampFin" : {
         "type" : "float"
@@ -86,19 +89,19 @@
         "type" : "float"
       },
       "2016:DNCNonChristian" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:DNCOthChristian" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:DNCVolPrPhV4" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:DNCVolPrWV4" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:DNCVolPropV4" : {
-        "type" : "float"
+        "type" : "short"
       },
       "2016:TSM:ASDCDon" : {
         "type" : "float"
@@ -134,22 +137,16 @@
         "type" : "float"
       },
       "2020:VolProp" : {
-        "type" : "float"
+        "type" : "short"
       },
       "AVEV" : {
         "type" : "float"
       },
       "Address" : {
-        "type" : "text",
-        "fields" : {
-          "keyword" : {
-            "type" : "keyword",
-            "ignore_above" : 256
-          }
-        }
+        "type" : "keyword"
       },
       "Age" : {
-        "type" : "long"
+        "type" : "short"
       },
       "AntiGOP" : {
         "type" : "float"
@@ -230,13 +227,7 @@
         "type" : "float"
       },
       "EarlyVoted" : {
-        "type" : "text",
-        "fields" : {
-          "keyword" : {
-            "type" : "keyword",
-            "ignore_above" : 256
-          }
-        }
+        "type" : "keyword"
       },
       "EconPers" : {
         "type" : "float"
@@ -322,6 +313,12 @@
       "NatTO" : {
         "type" : "float"
       },
+      "Notes" : {
+        "type" : "text"
+      },
+      "OtherEmail" : {
+        "type" : "keyword"
+      },
       "PhoneSource" : {
         "type" : "keyword"
       },
@@ -373,6 +370,9 @@
       "Preferred Phone" : {
         "type" : "keyword"
       },
+      "PreferredEmail" : {
+        "type" : "keyword"
+      },
       "PreferredPhoneIsCell" : {
         "type" : "keyword"
       },
@@ -400,6 +400,9 @@
       "Primary02Party" : {
         "type" : "keyword"
       },
+      "RaceName" : {
+        "type" : "keyword"
+      },
       "SD" : {
         "type" : "keyword"
       },
@@ -415,6 +418,9 @@
       "SSSup" : {
         "type" : "float"
       },
+      "Salutation  Informal" : {
+        "type" : "text"
+      },
       "Sex" : {
         "type" : "keyword"
       },
@@ -422,6 +428,9 @@
         "type" : "keyword"
       },
       "StateFileID" : {
+        "type" : "keyword"
+      },
+      "Suffix" : {
         "type" : "keyword"
       },
       "TaxEconPer" : {
@@ -446,6 +455,15 @@
         "type" : "keyword"
       },
       "WardName" : {
+        "type" : "keyword"
+      },
+      "WorkEmail" : {
+        "type" : "keyword"
+      },
+      "WorkPhone" : {
+        "type" : "keyword"
+      },
+      "WorkPhoneIsCell " : {
         "type" : "keyword"
       },
       "YEARXXScoreSName" : {
