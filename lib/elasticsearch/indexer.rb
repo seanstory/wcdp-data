@@ -28,16 +28,18 @@ module Elasticsearch
         latlon = geoips[row[0]]
         data = row_to_es_json(row, col_names, latlon)
         # puts data
-        puts "#{batch_num}: Adding #{row[0]} to batch"
+        # puts "#{batch_num}: Adding #{row[0]} to batch"
         batch << data
-        if batch.size == 1000
+        if batch.size == BATCH_SIZE
           client.bulk_add(index_name, batch)
+          puts "indexed batch #{batch_num} of #{batch.size}"
           batch = []
           batch_num += 1
         end
       end
       unless batch.empty?
         client.bulk_add(index_name, batch)
+        puts "indexed batch #{batch_num} of #{batch.size}"
       end
     end
 
