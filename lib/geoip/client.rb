@@ -33,17 +33,37 @@ module GeoIP
         :format => 'json'
       }
       response = get_request('address', params)
+      match = get_matching_address_or_raise!(response, params)
+      {
+        :lat => match['coordinates']['y'],
+        :long => match['coordinates']['x']
+      }
+    end
+
+    def get_address(one_line_address)
+      params = {
+        :address => one_line_address,
+        :format => 'json',
+        :benchmark => '4'
+      }
+      response = get_request('onelineaddress', params)
+      match = get_matching_address_or_raise!(response, params)['addressComponents']
+      {
+        :address1 => "#{match['fromAddress']} #{match['streetName']} #{match['suffixType']}",
+        :city => match['city'],
+        :state => match['state'],
+        :zip => match['zip']
+      }
+    end
+
+    def get_matching_address_or_raise!(response, params)
       matches = response.dig('result', 'addressMatches')
       if matches.nil? || matches.empty?
         # puts 'Response was: '
         # ap response
         raise "No matching address for #{params}"
       end
-
-      {
-        :lat => matches[0]['coordinates']['y'],
-        :long => matches[0]['coordinates']['x']
-      }
+      matches[0]
     end
 
     def get_request(url, params)
